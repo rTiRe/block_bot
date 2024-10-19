@@ -1,7 +1,7 @@
 from aiogram.filters import CommandObject, CommandStart
 from aiogram.types import Message
 
-from router import router
+from .router import router
 from src.keyboards import main_menu
 
 

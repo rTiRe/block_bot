@@ -9,7 +9,7 @@ class Settings(BaseSettings):
         return f'sqlite+aiosqlite:///db.sqlite'
 
     class Config:
-        env_file = 'config/.env'
+        env_file = 'src/config/.env'
 
 
 settings = Settings()
