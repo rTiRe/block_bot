@@ -23,6 +23,9 @@ class Settings(BaseSettings):
 
 settings = Settings()
 
+CHANNEL_ID = -1002416384562
+CHANNEL_URL = 'https://t.me/+TcvCQT1TPzdiMWFi'
+
 START_DEMOLITION_BUTTON = 'Начать снос'
 PROFILE_BUTTON = 'Профиль'
 SUPPORT_BUTTON = 'Тех. Поддержка'
