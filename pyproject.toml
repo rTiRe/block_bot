@@ -6,12 +6,16 @@ authors = ["rTiRe <zientenin@mail.ru>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.11"
 aiogram = "^3.13.1"
 pydantic-settings = "^2.6.0"
 sqlalchemy = "^2.0.36"
 asyncpg = "^0.30.0"
 alembic = "^1.13.3"
+aiocryptopay = "^0.4.6"
+aiohttp = "^3.10.10"
+fastapi = "^0.115.2"
+uvicorn = "^0.32.0"
 
 
 [build-system]

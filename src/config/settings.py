@@ -3,11 +3,15 @@ from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
     BOT_TOKEN: str
+    BOT_WEBHOOK_URL: str
+    CRYPTO_PAY_TOKEN: str
+    CRYPTO_WEBHOOK_URL: str
     POSTGRES_HOST: str
     POSTGRES_PORT: int
     POSTGRES_USER: str
     POSTGRES_PASSWORD: str
     POSTGRES_DB: str
+    WEBHOOK_URL: str
 
 
     @property
@@ -18,7 +22,7 @@ class Settings(BaseSettings):
         return f'{protocol}://{user_data}@{server_data}/{self.POSTGRES_DB}'
 
     class Config:
-        env_file = 'src/config/.env'
+        env_file = '.env'
 
 
 settings = Settings()
