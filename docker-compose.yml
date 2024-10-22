@@ -34,6 +34,8 @@ services:
     working_dir: "/usr/src/app/bot"
     volumes:
       - .:/usr/src/app/bot
+    ports:
+      - "8000:8000"
     command: poetry run python -m app
     restart: always
     env_file: .env
