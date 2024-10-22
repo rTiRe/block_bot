@@ -47,7 +47,7 @@ async def lifespan(app: FastAPI) -> None: # type: ignore
 def create_app() -> FastAPI:
     app = FastAPI(docs_url='/swagger', lifespan=lifespan)
     # app.include_router(tg_router, prefix='/tg', tags=['tg'])
-    app.webhooks.add_api_route('/webhook', home_post)
+    app.webhooks.add_api_route(settings.BOT_WEBHOOK_URL, home_post)
     return app
 
 
