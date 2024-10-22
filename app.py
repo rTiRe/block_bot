@@ -13,7 +13,8 @@ from src.handlers.router import router
 from src.middlewares.check_channel import CheckSubscriptionMiddleware
 from bg_tasks import background_tasks
 from bot import setup_bot, setup_dp
-from src.api.tg.router import router as tg_router
+# from src.api.tg.router import router as tg_router
+from src.api.tg.tg import home_post
 
 logging.basicConfig(level=logging.INFO)
 
@@ -45,7 +46,8 @@ async def lifespan(app: FastAPI) -> None: # type: ignore
 
 def create_app() -> FastAPI:
     app = FastAPI(docs_url='/swagger', lifespan=lifespan)
-    app.include_router(tg_router, prefix='/tg', tags=['tg'])
+    # app.include_router(tg_router, prefix='/tg', tags=['tg'])
+    app.webhooks.add_api_route('/webhook', home_post)
     return app
 
 
